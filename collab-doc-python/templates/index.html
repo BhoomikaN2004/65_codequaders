@@ -1,0 +1,34 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Collab Doc - Tiny</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 12px }
+textarea { width: 100%; max-width: 900px; }
+#history { background: #f4f4f4; padding: 8px; margin-top: 12px }
+button { margin: 4px }
+</style>
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+<h2>Simple Collaborative Document</h2>
+<div>
+<label>Author: <input id="author" value="guest"></label>
+<label style="margin-left:10px">Commit message: <input id="commitMsg" placeholder="brief message"></label>
+<button id="commitBtn">Commit</button>
+<button id="historyBtn">History</button>
+</div>
+
+
+<textarea id="editor" rows="18" placeholder="Start typing..."> </textarea>
+<div id="status">status</div>
+
+
+<div id="history" style="display:none"></div>
+
+
+<script src="{{ url_for('static', filename='client.js') }}"></script>
+</body>
+</html>
